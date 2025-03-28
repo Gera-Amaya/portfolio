@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para copiar el correo electrónico
     const emailButton = document.querySelector('.email-button');
     emailButton.addEventListener('click', function() {
-      const email = 'tu-email@dominio.com';
+      const email = 'gamayamolina@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         emailButton.textContent = 'Copied';
         setTimeout(() => {
