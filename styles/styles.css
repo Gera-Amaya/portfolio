@@ -12,17 +12,21 @@ body {
     background-color: #f5f5f5; /* Fondo claro para mejor legibilidad */
     color: #333; /* Color del texto */
     box-sizing: border-box; /* Incluye padding y border en las dimensiones */
+    transition: background-color 1s, color 1s;
   }
   
   header {
     text-align: start;
     background-color: #f5f5f5;
     color: #242424;
+    transition: background-color 1s, color 1s;
   }
-  
-  header h1 {
-    margin: 0;
-    font-size: 2.5em;
+
+  header {
+    text-align: start;
+    background-color: #f5f5f5;
+    color: #242424;
+    transition: background-color 1s, color 1s;
   }
   
   header .profile-image {
@@ -54,6 +58,27 @@ body {
     justify-content: center;
     background-color: #ffffff;
     border-radius: 10px;
+    transition: background-color 1s, color 1s;
+  }
+
+  body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+  }
+
+  .dark-mode header, .dark-mode footer, .dark-mode  {
+      background-color: #121212;
+      color: #f5f5f5;
+  }
+
+  .dark-mode .projects{
+    background-color: #121212;
+      color: #ffffff;
+  }
+  
+
+  .dark-mode .project-image {
+      filter: brightness(0.8);
   }
 
   @media (max-width: 768px) {
@@ -134,6 +159,7 @@ body {
     padding: 1em 0;
     background-color: #f5f5f5;
     color: #2b2b2b;
+    transition: background-color 1s, color 1s;
   }
   
   .email-button {

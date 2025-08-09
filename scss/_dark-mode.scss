@@ -1,0 +1,21 @@
+@use 'variables';
+
+.dark-mode {
+  background-color: variables.$background-color-dark;
+  color: variables.$text-color-dark;
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: variables.$background-color-dark;
+  color: variables.$text-color-light;
+}
+
+.dark-mode .projects {
+  background-color: variables.$background-color-dark;
+  color: variables.$text-color-dark;
+}
+
+.dark-mode .project-image {
+  filter: brightness(0.8);
+}

@@ -1,0 +1,226 @@
+@use 'variables';
+
+.project {
+  text-align: center; /* Centra el contenido dentro del bloque del proyecto */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra las columnas horizontalmente */
+  gap: 40px; /* Espacio entre las columnas */
+}
+
+.column {
+  flex: 1;
+  max-width: 45%; /* Limita el ancho máximo de cada columna */
+  box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+  aspect-ratio: 16/9;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Asegúrate de que el contenedor tenga un tamaño fijo */
+  overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+    object-fit: cover;
+}
+
+.project-image.primary {
+  opacity: 1;
+  z-index: 1;
+}
+
+.project-image.secondary {
+  opacity: 0;
+  z-index: 2;
+}
+
+.image-container:hover .project-image.primary,
+.image-container:focus-within .project-image.primary {
+  opacity: 0;
+}
+
+.image-container:hover .project-image.secondary,
+.image-container:focus-within .project-image.secondary {
+  opacity: 1;
+}
+
+.zoom-on-focus {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover .zoom-on-focus { /* <-- El hover va en el padre */
+  z-index: 1000;
+  transform: scale(0.90); /* Dejamos solo el transform para la animación */
+  box-shadow: 0 0 10px #202020;
+  outline: none;
+}
+
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+h3 {
+  margin-top: 15px; /* Espacio entre la imagen y el texto */
+  font-size: 1.1em; /* Ajusta el tamaño del texto si es necesario */
+  line-height: 1.4; /* Mejora la legibilidad ajustando el espacio entre líneas */
+}
+
+header, footer {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.projects {
+    gap: 1em;
+    padding: 2em;
+}
+
+.project img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 3em;
+    }
+
+    .project {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    background-color: #f5f5f5;
+}
+
+.dark-mode-button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-button:hover {
+    background-color: #555555;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.email-button {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    margin: 15px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.email-button:hover {
+    background-color: #202020;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.email-button.bounce {
+    animation: bounce 0.6s;
+}
+
+.email-button.halo {
+    position: relative;
+    animation: halo-effect 1.2s forwards;
+    animation-duration: 3.3s;
+}
+
+@keyframes halo-effect {
+    0% {
+        box-shadow: 0 0 0 0 rgba(179, 0, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 40px 40px rgba(98, 0, 203, 255);
+    }
+}
+
+.email-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+    color: #dfdfdf;
+}
+
+.about-me {
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
+    text-align: left;
+}
+
+
+  .image-profile img {
+    display: grid; /* Elimina espacios en línea alrededor de la imagen */
+    grid-template-columns: auto;
+    width: 90%; /* Ajusta la imagen al ancho del contenedor */
+    height: auto; /* Mantiene las proporciones */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-profile {
+    display: grid; /* Elimina espacios en línea alrededor de la imagen */
+    grid-template-columns: 20% auto;
+    height: auto; /* Mantiene las proporciones */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .language-selector {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#language-select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: variables.$background-color-dark;
+  color: variables.$text-color-dark;
+  cursor: pointer;
+}

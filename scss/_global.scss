@@ -1,0 +1,12 @@
+@use 'variables';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+head {
+  justify-content: center; /* Centra verticalmente */
+}
