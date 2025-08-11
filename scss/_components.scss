@@ -46,12 +46,14 @@
 
 .image-container:hover .project-image.primary,
 .image-container:focus-within .project-image.primary {
-  opacity: 0;
+    opacity: 0;
+    transition: 0.6s;
 }
 
 .image-container:hover .project-image.secondary,
 .image-container:focus-within .project-image.secondary {
   opacity: 1;
+  transition: 1.6s;
 }
 
 .zoom-on-focus {
@@ -60,8 +62,8 @@
 
 .image-container:hover .zoom-on-focus { /* <-- El hover va en el padre */
   z-index: 1000;
-  transform: scale(0.90); /* Dejamos solo el transform para la animación */
-  box-shadow: 0 0 10px #202020;
+  transform: scale(0.98); /* Dejamos solo el transform para la animación */
+  box-shadow: 0 0 5px #202020;
   outline: none;
 }
 
@@ -95,17 +97,6 @@ header, footer {
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    .projects {
-        grid-template-columns: 1fr;
-        gap: 3em;
-    }
-
-    .project {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-}
 
 header {
     display: flex;
@@ -223,4 +214,26 @@ header {
   background-color: variables.$background-color-dark;
   color: variables.$text-color-dark;
   cursor: pointer;
+}
+
+
+/* =============================================== */
+/*              VISTA PARA MÓVILES                 */
+/* =============================================== */
+@media (max-width: 768px) {
+
+  /* 1. Ajustamos el contenedor principal de los proyectos *
+  
+  /* 2. LA SOLUCIÓN: Hacemos que la imagen sea panorámica */
+  .image-container {
+    max-width: 100%;
+}
+
+/* 3. Opcional: Nos aseguramos de que se vea la parte de arriba del sitio */
+.project-image {
+    width: 1080px;
+    object-position: center top;
+  }
+  
+  /* ... tus otras reglas de móvil aquí ... */
 }
