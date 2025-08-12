@@ -19,3 +19,13 @@
 .dark-mode .project-image {
   filter: brightness(0.8);
 }
+
+.dark-mode .email-button {
+  background-color: variables.$background-color-light;
+  color: variables.$text-color-light;
+}
+
+.dark-mode .language-selector {
+  background-color: variables.$background-color-light;
+  color: variables.$text-color-light;
+}

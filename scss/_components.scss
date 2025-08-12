@@ -118,7 +118,7 @@ header {
 }
 
 .dark-mode-button:hover {
-    background-color: #555555;
+    background-color: variables.$background-color-dark;
     transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
@@ -134,7 +134,7 @@ header {
 }
 
 .email-button {
-    background-color: #4caf50;
+    background-color: variables.$background-color-dark;
     color: #ffffff;
     border: none;
     margin: 15px;
@@ -201,7 +201,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .language-selector {
+.language-selector {
   position: absolute;
   top: 10px;
   right: 10px;
