@@ -262,9 +262,9 @@ header {
   .projects {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 85%;
+    grid-auto-columns: 100%;
     /* ... y todos los demás estilos del slider ... */
-    gap: 20px;
+    gap: 40px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 2em 25px;
@@ -272,6 +272,6 @@ header {
 
   .project {
     scroll-snap-align: center;
-    width: 100%;
+    width: 350px;
   }
 }
