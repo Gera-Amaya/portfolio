@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const selectedLanguage = e.target.value;
       // Cambiar el texto a español o inglés
       if (selectedLanguage === 'es') {
-        document.querySelectorAll('.project h3, .about-me').forEach((element) => {
+        document.querySelectorAll('.project h3, .about-me-text h3').forEach((element) => {
           element.textContent = getSpanishText(element.textContent);
         });
         document.querySelectorAll('h2').forEach((element) => {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       } else if (selectedLanguage === 'en') {
-        document.querySelectorAll('.project h3, .about-me').forEach((element) => {
+        document.querySelectorAll('.project h3, .about-me-text h3').forEach((element) => {
           element.textContent = getEnglishText(element.textContent);
         });
         document.querySelectorAll('h2').forEach((element) => {
